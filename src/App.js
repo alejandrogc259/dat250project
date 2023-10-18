@@ -11,8 +11,9 @@ function App() {
   }, []);
 
   async function getUsers() {
-    const {data}= await fetch('/users');
-      console.log(data)
+    const data= await fetch('/users');
+    const u = await data.json();
+    console.log(u);
     setUsers(data);
   }
 
